@@ -32,5 +32,5 @@ int main (){
     t1.display();
     t2.display();
     t3.display();
-    
+
 }
