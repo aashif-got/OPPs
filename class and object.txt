@@ -1,0 +1,126 @@
+class and object:
+class is an user defined data type, class declaration is similar to struct declaration.
+object is an instance of class, object is created as an variable of class type using class name.
+
+Member of class:
+ 	data members/attributes.
+ 	member function/ methods.
+data members:
+ 	primary data types: int, float, double, bool, char.
+ 	secondary data types: arrays, pointer, class object etc.
+     data members are classified into two types:
+ 	1.regular : every object gets its own copy of data member
+ 	2.static : every object shares the same copy of data members.
+static data member:
+ 	* This object is created using the keyword "static".
+ 	* only one copy of static variable is created and all the objects shares the same copy.
+ 	* once the static variable is created inside the class, it should also needed to declare it outside the class, using the syntax,
+ 	data_type classname :: variablename.
+ 	* the static variable is usually created to maintain the common values between two objects.
+member function:
+ 	* function declared inside the class is called member function or method.
+ 	* method can be declared in two ways - inside the class or outside the class, using scope resolution operator(::).
+Types of function in class:
+regular function.
+overloaded function.
+inline function.
+friend function.
+static function.
+constructor.
+destructor.
+virtual function.
+
+friend function:
+ 	* It is not the member of the class, but it still has special access,
+ 	* The friend function is declared inside the class using the keyword "Friend" , so it can access the private and protected data.
+ 	* Takes at least one object as parameters.
+ 	* Can not be called as object like member function ex: obj.functionname().
+ 	* One function can be friend of multiple classes.
+Uses of friend function:
+operator overloading: some operator often need to access private members of two different classes.
+When two are more classes need close interaction.
+enhance encapsulation.
+friend classes:
+ 	It is useful when one or more classes needs to work together and needs to access each other's data member without making them accessible by other class.
+
+Static function:
+It will only access the static member of the same class.
+syntax : class_name::functionname();
+Const function:
+ 	It ensures that it wont modify any data members.
+ 	function declaration followed by the keyword "const"
+ 	eg: void put() const{
+}
+Constructor :
+Constructors is an special member function of a class , that automatically executed  when an object of that class has been created.
+The main purpose of the constructor is to initialize data members.
+They can have any numbers of parameters, they do not have return type because they called automatically by system.
+Have the same name as the class.
+
+Types of constructor:
+ 	1. default constructor : constructor with zero arguments
+ 	eg: circle c1;
+ 	2.paramitized constructor: constructor that takes parameter to initialize members.
+ 	eg: circle c1(3.5);
+ 	3. copy constructor: A constructor that takes reference to another object of the same class, used when creating a new object from the existing object.
+ 	eg: circle c2 = c1;
+
+ways of calling constructor:
+ 	1.implicit call
+ 		classname obj(parameter)
+ 	2.explicit call;
+ 		classname obj = classname(paramter);
+ 	3.dynamic initatization;
+ 		* first an object is created (memory allocated), then a parametrized constructor is used to assign value, it is useful when value are taken at runtime
+ 		syntax:
+ 			classname obj;
+ 			c = class(x);
+Destructor:
+ 	* A special member function called implicitly to deallocate the memory of the object allocated by constructor.
+ 	* It has same name as the class name preceded by (~) sign.
+ 	* only one destructor per class.
+ 	* also it will call itself when object goes outside its scope.
+Function overloading: 
+ 	Function with same name but with different parameters, all function are defined inside the class.
+Operator overloading:
+ 	Operator overloading is a feature that lets us to redefine existing operator (like +,-,*,==,etc),so they can work with user defined data type (like object).
+7
+Rules of operator overloading:
+ 	* only existing operator can be over loaded.
+ 	* At least one operands must be user defined.
+ 	* No default arguments are allowed.
+ 	* Binary operator must return a value.
+ 	* Precedence cannot be changed.
+unary operator:
+ 	* unary operator acts on single operands (++,--).
+ 	* can be overloaded through non static member function or friend function.
+ 	*member function -> takes no parameters
+ 		example: x.operator++();
+ 	*friend function -> takes one parameter
+ 		example: operator++(x);
+binary operator:
+	* Binary operator acts on double operands (=,-,*,=,etc).
+	* Overloading with member function: takes one parameter -> RHS object, the LHS object becomes the calling object.
+	* the LHS operand must be an object (because it calls the function)
+	* overloading with friend function: takes two parameter LHS and RHS, at least one must be object.
+	in short:
+	* use member function when both operand are object.
+	* use friend function when one operand and another primitive type.
+Inheritance:
+
+
+
+ 
+
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
